@@ -51,12 +51,12 @@ class Vocabulary extends Component {
             if (this.state.categories.indexOf(item.category) == -1) {
                 this.state.categories.push(item.category)
             }
-        })
-        this.state.words.map((item) => {
             if (item.category == this.props.route.params.category) {
                 this.state.wordCategory.push(item)
             }
         })
+
+
     };
 
     test() {
@@ -107,7 +107,7 @@ class Vocabulary extends Component {
         WordToAdd.showGerman = true;
 
         wordArray.push(WordToAdd)
-        storeData(wordArray)
+        storeData(wordArray, 'my-key')
         this.setState({ modalVisible: !this.state.modalVisible, words: wordArray, wordCategory: wordArray })
         this.state.words.map((item) => {
             if (this.state.categories.indexOf(item.category) == -1) {
@@ -125,7 +125,7 @@ class Vocabulary extends Component {
         } else {
             console.log("no splice")
         }
-        storeData(this.state.words)
+        storeData(this.state.words, 'my-key')
         this.setState({
             itemModalVisible: false,
         })
