@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimensions, FlatList, Keyboard, Pressable, StyleSheet, TouchableHighlightBase } from 'react-native';
+import { Dimensions, FlatList, Keyboard, Pressable, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import {
     View,
     Text,
@@ -14,21 +14,6 @@ import {
     TextField,
     Assets
 } from 'react-native-ui-lib';
-import { storeData } from '../../storage/storeData';
-import { getData } from '../../storage/getData';
-import { Word } from '../../storage/models';
-
-import  { useState, useEffect } from 'react';
-import {
-
-  
-  Image,
-  TextInput,
-  TouchableWithoutFeedback,
-  ScrollView,
-  Alert,
-} from 'react-native';
-import { Icon } from 'react-native-elements';
 
 const testSentence = [
 {
@@ -46,14 +31,14 @@ class Dialog extends Component {
     render() {
         {{console.log('lalala');}}
         return (
-            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <View>
               <View style={styles.container}>
                 <FlatList
                   style={{ backgroundColor: '#f2f2ff' }}
                   inverted={true}
                   data={testSentence}
                   renderItem={({ item }) => (
-                    <TouchableWithoutFeedback>
+                    <View>
                       <View style={{ marginTop: 6 }}>
                         <View
                           style={{
@@ -105,14 +90,14 @@ class Dialog extends Component {
                     {item.german}
                   </Text>
                   </View>
-                    </TouchableWithoutFeedback>
+                    </View>
                   )}
                 />
                 
         
 
               </View>
-            </TouchableWithoutFeedback>
+            </View>
           );
     }
 }
