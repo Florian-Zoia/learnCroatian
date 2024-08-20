@@ -14,6 +14,10 @@ import { getData } from '../storage/getData';
 import { styles } from '../stylesheets/categoryPicker';
 import { FlatList } from 'react-native';
 
+import Vocabulary from '../modules/vocabularyModule';
+
+
+
 const themes = [
     {
         screen: 'CategoryPicker',
