@@ -10,10 +10,10 @@ import {
     GridListProps,
     TouchableOpacity,
 } from 'react-native-ui-lib';
-import { getData } from '../../storage/getData';
+import { getData } from '../storage/getData';
 import { styles } from '../stylesheets/categoryPicker';
 import { FlatList } from 'react-native';
-import { specificLetters } from '../../storage/alphabet_pronounciation';
+import { specificLetters } from '../storage/alphabet_pronounciation';
 
 class Alphabet_pronounciation extends Component {
     state = {

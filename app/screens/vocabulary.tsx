@@ -14,9 +14,9 @@ import {
     TextField,
     Assets
 } from 'react-native-ui-lib';
-import { storeData } from '../../storage/storeData';
-import { getData } from '../../storage/getData';
-import { Word } from '../../storage/models';
+import { storeData } from '../storage/storeData';
+import { getData } from '../storage/getData';
+import { Word } from '../storage/models';
 import { styles } from '../stylesheets/vocabulary';
 
 const randomIcon = require('../icons/shuffle.png');  

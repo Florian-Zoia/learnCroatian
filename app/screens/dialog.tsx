@@ -8,8 +8,8 @@ import {
   Modal,
   TextField,
 } from 'react-native-ui-lib';
-import { storeData } from '../../storage/storeData';
-import { getData } from '../../storage/getData';
+import { storeData } from '../storage/storeData';
+import { getData } from '../storage/getData';
 
 import {
   TouchableWithoutFeedback
