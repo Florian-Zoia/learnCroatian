@@ -83,24 +83,6 @@ class Index extends Component {
         }
         return (
             <View style={styles.touchableOpacity}>
-                {/* <GridList<(typeof this.state.categories)[0]>
-                    // ListHeaderComponent={() => this.renderHeader()}
-                    data={this.state.categories}
-                    renderItem={this.renderItem}
-                    numColumns={1} 
-                    // maxItemWidth={140}  
-                    itemSpacing={Spacings.s2}
-                    listPadding={Spacings.s5}
-                    // keepItemSize
-                    contentContainerStyle={styles.list}
-                /> */}
-                {/* {this.state.categories.map((item) => {
-                    return (
-                        <View>
-                        <Text>{data}</Text>
-                        </View>
-                    )
-                })} */}
                 <FlatList
                     data={themes}
                     renderItem={({ item }) => (

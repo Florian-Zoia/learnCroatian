@@ -18,12 +18,15 @@ const ex = require('../icons/cross-button.png');
 export default class Vocabulary extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            guess: this.props.guess
+        }
     }
 
     render() {
-        if (this.props.guess) {
+        if (this.state.guess) {
             return (
-                <Card height={'66%'} width={'88%'} activeOpacity={1} >
+                <Card height={'66%'} width={'88%'} activeOpacity={1} onPress={() => this.setState({guess: !this.state.guess})}>
                     <Card.Section
                         bg-$backgroundDangerHeavy
                         flex
@@ -59,7 +62,7 @@ export default class Vocabulary extends Component {
                     />
                     <View
                         row
-                        flex-2
+                        flex
                     >
                         <Card.Section
                             flex

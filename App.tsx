@@ -9,6 +9,7 @@ import ChatScreen1 from './app/screens/ChatScreen1';
 import Index from './app/screens';
 import Alphabet_pronounciation from './app/screens/alphabet_pronounciation';
 import  Dialog  from './app/screens/dialog';
+import Abfrage from './app/screens/Abfrage';
 
 // Initialize the Stack navigator
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ function StackNavigation() {
       <Stack.Navigator
       screenOptions={{headerShown: false}}>
         {/* <Stack.Screen name="ChatScreen" component={ChatScreen1} />  */}
+        <Stack.Screen name="Abfrage" component={Abfrage} /> 
         <Stack.Screen name="Index" component={Index} /> 
         <Stack.Screen name="Dialog" component={Dialog} />
         <Stack.Screen name="alphabet_pronounciation" component={Alphabet_pronounciation} />
