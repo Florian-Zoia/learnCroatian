@@ -15,6 +15,7 @@ import { styles } from '../stylesheets/categoryPicker';
 import { FlatList } from 'react-native';
 
 import { words } from '../storage/words';
+import { exportAsyncStorageData } from '../storage/export_data';
 
 class CategoryPicker extends Component {
     state = {
@@ -143,6 +144,14 @@ class CategoryPicker extends Component {
 
                     )}
                 />
+                <View style={styles.cardView}>
+                    <Card
+                    onPress={() => exportAsyncStorageData}>
+                        <View padding-s2>
+                        <Text style={styles.text}>export files</Text>
+                        </View>
+                    </Card>
+                </View>
             </View>
         );
     }
