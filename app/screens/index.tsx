@@ -14,6 +14,12 @@ import { getData } from '../storage/getData';
 import { styles } from '../stylesheets/categoryPicker';
 import { FlatList } from 'react-native';
 
+import Vocabulary from '../modules/vocabularyModule';
+import { storeData } from '../storage/storeData';
+import { words } from '../storage/words';
+
+
+
 const themes = [
     {
         screen: 'CategoryPicker',
@@ -79,24 +85,6 @@ class Index extends Component {
         }
         return (
             <View style={styles.touchableOpacity}>
-                {/* <GridList<(typeof this.state.categories)[0]>
-                    // ListHeaderComponent={() => this.renderHeader()}
-                    data={this.state.categories}
-                    renderItem={this.renderItem}
-                    numColumns={1} 
-                    // maxItemWidth={140}  
-                    itemSpacing={Spacings.s2}
-                    listPadding={Spacings.s5}
-                    // keepItemSize
-                    contentContainerStyle={styles.list}
-                /> */}
-                {/* {this.state.categories.map((item) => {
-                    return (
-                        <View>
-                        <Text>{data}</Text>
-                        </View>
-                    )
-                })} */}
                 <FlatList
                     data={themes}
                     renderItem={({ item }) => (
@@ -117,6 +105,18 @@ class Index extends Component {
 
                     )}
                 />
+                <Card
+                    onPress={() => storeData(words, 'my-key')}
+                    marginR-5
+                    // height={10}
+                    flex-1
+                    style={styles.card}>
+                    <View>
+                        <Text>
+                            Vokabelliste speichern
+                        </Text>
+                    </View>
+                </Card>
             </View>
         );
     }
