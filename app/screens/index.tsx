@@ -15,6 +15,8 @@ import { styles } from '../stylesheets/categoryPicker';
 import { FlatList } from 'react-native';
 
 import Vocabulary from '../modules/vocabularyModule';
+import { storeData } from '../storage/storeData';
+import { words } from '../storage/words';
 
 
 
@@ -103,6 +105,18 @@ class Index extends Component {
 
                     )}
                 />
+                <Card
+                    onPress={() => storeData(words, 'my-key')}
+                    marginR-5
+                    // height={10}
+                    flex-1
+                    style={styles.card}>
+                    <View>
+                        <Text>
+                            Vokabelliste speichern
+                        </Text>
+                    </View>
+                </Card>
             </View>
         );
     }

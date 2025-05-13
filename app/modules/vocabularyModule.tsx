@@ -9,6 +9,7 @@ import {
 } from 'react-native-ui-lib';
 
 import PropTypes from 'prop-types';
+import { TouchableOpacity } from 'react-native';
 
 const check = require('../icons/check.png');
 const ex = require('../icons/cross-button.png');
@@ -18,29 +19,19 @@ const ex = require('../icons/cross-button.png');
 export default class Vocabulary extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            guess: this.props.guess
-        }
     }
 
     render() {
-        if (this.state.guess) {
+        if (this.props.guess) {
             return (
-                <Card height={'66%'} width={'88%'} activeOpacity={1} onPress={() => this.setState({guess: !this.state.guess})}>
-                    <Card.Section
-                        bg-$backgroundDangerHeavy
-                        flex
-                        content={[
-                            { text: 'Vocabulary', text60: true, $textDefaultLight: true }
-                        ]}
-                        contentStyle={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-                    />
+                <Card height={'66%'} width={'88%'} activeOpacity={1} onPress={() => this.props.updateGuess(!this.props.guess)}>
                     <Card.Section
                         bg-$backgroundElevated
                         padding-20
                         flex-4
-                        content={[{ text: 'All site', text20BL: true, $textDefault: true, }]}
+                        content={[{ text: this.props.croatianWord, text20BL: true, $textDefault: true, color: '#121212' }]}
                         contentStyle={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+                        style={{backgroundColor: '#b3b3b3'}}
                     />
                 </Card>
             )
@@ -51,35 +42,46 @@ export default class Vocabulary extends Component {
                         bg-$backgroundElevated
                         flex-2
                         padding-10
-                        content={[{ text: 'All site', text20BL: true, $textDefault: true, }]}
+                        content={[{ text: this.props.croatianWord, text20BL: true, $textDefault: true, color: '#121212' }]}
                         contentStyle={{ flex: 1, alignItems: 'center', justifyContent: 'center', borderBottomWidth: 1 }}
+                        style={{backgroundColor: '#b3b3b3'}}
                     />
                     <Card.Section
                         bg-$backgroundElevated
                         flex-2
-                        content={[{ text: 'All site', text20BL: true, $textDefault: true, }]}
+                        content={[{ text: this.props.germanWord, text20BL: true, $textDefault: true, color: '#121212' }]}
                         contentStyle={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+                        style={{backgroundColor: '#b3b3b3'}}
                     />
                     <View
                         row
                         flex
                     >
-                        <Card.Section
-                            flex
-                            row
-                            bg-$outlineDefault
-                            imageSource={ex}
-                            imageStyle={{ display: 'flex', flex: 0.66, height: '100%', width: '100%', marginLeft: 40 }}
-                            style={{ borderRightWidth: 1, borderTopWidth: 1, borderColor: 'black', borderCurve: 0 }}
-                        />
-                        <Card.Section
-                            flex
-                            row
-                            bg-$outlineDefault
-                            imageSource={check}
-                            imageStyle={{ display: 'flex', flex: 0.66, height: '100%', width: '100%', marginLeft: 40 }}
-                            style={{ borderLeftWidth: 1, borderTopWidth: 1, borderColor: 'black', borderRadius: 0 }}
-                        />
+                        <TouchableOpacity style={{ flex: 1, backgroundColor: '#b3b3b3' }} onPress={() =>
+                            this.props.wrongWord()
+                        }>
+                            <Card.Section
+                                flex
+                                row
+                                bg-$outlineDefault
+                                imageSource={ex}
+                                imageStyle={{ display: 'flex', flex: 0.66, height: '100%', width: '100%', marginLeft: 40 }}
+                                style={{ borderRightWidth: 1, borderTopWidth: 1, borderColor: 'black', borderCurve: 0, backgroundColor: '#b3b3b3' }}
+                            
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ flex: 1, backgroundColor: '#b3b3b3' }} onPress={() =>
+                            this.props.correctWord()
+                        }>
+                            <Card.Section
+                                flex
+                                row
+                                bg-$outlineDefault
+                                imageSource={check}
+                                imageStyle={{ display: 'flex', flex: 0.66, height: '100%', width: '100%', marginLeft: 40 }}
+                                style={{ borderLeftWidth: 1, borderTopWidth: 1, borderColor: 'black', borderRadius: 0, backgroundColor: '#b3b3b3' }}
+                            />
+                        </TouchableOpacity>
                     </View>
                 </Card>
             )
@@ -87,4 +89,8 @@ export default class Vocabulary extends Component {
     }
 }
 
-Vocabulary.propTypes = { guess: PropTypes.bool.isRequired }
+Vocabulary.propTypes = {
+    guess: PropTypes.bool.isRequired,
+    germanWord: PropTypes.string.isRequired,
+    croatianWord: PropTypes.string.isRequired
+}
