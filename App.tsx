@@ -13,6 +13,8 @@ import Dialog from './app/screens/dialog';
 import Abfrage from './app/screens/Abfrage';
 import AddNew from './app/screens/addNew';
 import AddDB from './app/screens/add_DB';
+import Village_Test from './app/screens/village_Test';
+import Play_Sound from './app/screens/Play_Sound';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -23,14 +25,25 @@ const LernStack = createNativeStackNavigator();
 const TestStack = createNativeStackNavigator();
 const NeueVocStack = createNativeStackNavigator();
 
+const VillageStack = createNativeStackNavigator();
+
 // Initialize the Tab navigator
 const Tab = createBottomTabNavigator();
 
+function VillageStackNavigator() {
+  return (
+    <VillageStack.Navigator
+    screenOptions={{headerShown: false}}>
+      <VillageStack.Screen name="village_Test" component={Village_Test} />
+    </VillageStack.Navigator>
+  )
+}
 
 function LernStackNavigation() {
   return (
     <LernStack.Navigator
       screenOptions={{ headerShown: false }}>
+      <LernStack.Screen name="Play_Sound" component={Play_Sound} /> 
       <LernStack.Screen name="CategoryPicker" component={CategoryPicker} />
       <LernStack.Screen name="Abfrage" component={Abfrage} />
       <LernStack.Screen name="Index" component={Index} />
@@ -94,6 +107,13 @@ function TabNavigation() {
           tabBarLabel: 'Neue Vokabel'
         }}
       />
+      <Tab.Screen
+        name="Village"
+        component={VillageStackNavigator}
+        options={{
+          tabBarLabel: 'Village'
+        }}
+        />
     </Tab.Navigator>
   )
 }

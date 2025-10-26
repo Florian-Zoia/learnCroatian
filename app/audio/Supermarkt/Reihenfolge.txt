@@ -1,0 +1,10 @@
+1- izvinite
+2- Entschuldigung
+3- gdje mogu pronaći
+4- wo finde ich 
+5- s lijeve strane
+6- links neben 
+7- s pravo strane
+8- rechts neben 
+9- hvala 
+10- danke 

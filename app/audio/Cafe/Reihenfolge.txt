@@ -1,0 +1,15 @@
+1-dobar dan 
+2-Guten Tag 
+3-Što želite 
+4-Was möchten Sie ? 
+5-Pijem Kavu
+6-Ich nehme einen Kaffee
+7-veliki ili mali ? 
+8- groß oder klein 
+9-mali molim 
+10-klein bitte
+11-i jedan voda 
+12- und ein Wasser 
+13- Dođite odmah
+14- Kommt sofort 
+15- 

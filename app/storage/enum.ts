@@ -1,11 +1,7 @@
 export enum difficultyEnum {
-    veryEasy = 0.25,
-    easy = 0.5,
-    easyMedium = 0.75,
-    medium = 1,
-    hardMedium = 1.5,
-    hard = 1.75,
-    veryHard = 2.25
+    easy = 1.3,
+    medium = 3.3,
+    hard = 5,
 };
 
 export enum wordCategory {

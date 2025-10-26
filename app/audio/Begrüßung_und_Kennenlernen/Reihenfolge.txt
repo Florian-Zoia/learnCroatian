@@ -1,0 +1,10 @@
+1-Bog
+1-Hallo
+2-Kako-se-zoveš-
+2-Wie-heißt-du-
+3-Ich-heiße
+3-Zovem-se
+4-I-ti-
+4-Und-du-
+5-Drago mi je što smo 
+5-Schön dich kennenzul
